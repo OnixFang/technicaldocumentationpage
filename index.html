@@ -19,7 +19,10 @@
     <a class="nav-link" href="#What_is_TypeScript?">What is TypeScript?</a>
     <a class="nav-link" href="#Local_Environment_Setup">Local Environment Setup</a>
     <a class="nav-link" href="#Compile_and_Execute_a_TypeScript_Program">Compile and Execute a TypeScript Program</a>
-    <a class="nav-link" href="#TypeScript_Types">TypeScript Types</a>
+    <a class="nav-link" href="#Types">Types</a>
+    <a class="nav-link" href="#Variable_Declaration_in_TypeScript">Variable Declaration in TypeScript</a>
+    <a class="nav-link" href="#Functions">Functions</a>
+    <a class="nav-link" href="#Reference">Reference</a>
   </nav>
 
   <main id="main-doc">
@@ -112,9 +115,9 @@
         <code>tsc file1.ts, file2.ts, file3.ts</code>
       </article>
     </section>
-    <section id="TypeScript_Types" class="main-section">
+    <section id="Types" class="main-section">
       <header>
-        <h2>TypeScript Types</h2>
+        <h2>Types</h2>
       </header>
       <article>
         <p>The Type System represents the different types of values supported by the language. The Type System checks
@@ -129,7 +132,134 @@
           <li><strong>Built-in types</strong>: include number, string, boolean, void, null and undefined.</li>
           <li><strong>User-defined types</strong>: include Arrays, Enums, Classes, Interfaces, etc.</li>
         </ul>
+
+        <h3>The Any type</h3>
+        <p>The any data type is the super type of all types in TypeScript. It denotes a dynamic type. Using the any type
+          is equivalent to opting out of type checking for a variable.</p>
+
+        <h3>Built-in types</h3>
+        <p>The following table illustrates all the built-in types in TypeScript:</p>
+        <table id="built-in_types_table">
+          <thead>
+            <th>Data type</th>
+            <th>Keyword</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Number</td>
+              <td>number</td>
+              <td>Double precision 64-bit floating point values. It can be used to represent both, integers and
+                fractions.</td>
+            </tr>
+            <tr>
+              <td>String</td>
+              <td>string</td>
+              <td>Represents a sequence of Unicode characters.</td>
+            </tr>
+            <tr>
+              <td>Boolean</td>
+              <td>boolean</td>
+              <td>Represents logical values, true and false.</td>
+            </tr>
+            <tr>
+              <td>Void</td>
+              <td>void</td>
+              <td>Used on function return types to represent non-returning functions.</td>
+            </tr>
+            <tr>
+              <td>Null</td>
+              <td>null</td>
+              <td>Represents an intentional absence of an object value.</td>
+            </tr>
+            <tr>
+              <td>Undefined</td>
+              <td>undefined</td>
+              <td>Denotes value given to all uninitialized variables.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Note</strong> − There is no integer type in TypeScript and JavaScript.</p>
+
+        <h3>Null and undefined ─ Are they the same?</h3>
+        <p>The null and the undefined datatypes are often a source of confusion. The null and undefined cannot be used
+          to reference the data type of a variable. They can only be assigned as values to a variable.</p>
+
+        <p>However, null and undefined are not the same. A variable initialized with undefined means that the variable
+          has no value or object assigned to it while null means that the variable has been set to an object whose value
+          is undefined.</p>
+
+        <h3>User-defined Types</h3>
+        <p>User-defined types include Enumerations (enums), classes, interfaces, arrays, and tuple. These are discussed
+          in detail in the later chapters.</p>
       </article>
+    </section>
+    <section id="Variable_Declaration_in_TypeScript" class="main-section">
+      <header>
+        <h2>Variable Declaration in TypeScript</h2>
+      </header>
+      <article>
+        <p>The type syntax for declaring a variable in TypeScript is to include a colon (:) after the variable name,
+          followed by its type. Just as in JavaScript, we use the var keyword to declare a variable.</p>
+
+        <p>When you declare a variable, you have four options:</p>
+        <ul>
+          <li>Declare its type and value in one statement.</li>
+          <code><span class="keyword">var</span> <span class="identifier">[identifier]</span>: <span class="class-name">[type-annotation]</span> = value;</code>
+          <li>Declare its type but no value. In this case, the variable will be set to undefined.</li>
+          <code><span class="keyword">var</span> <span class="identifier">[identifier]</span>: <span class="class-name">[type-annotation]</span>;</code>
+          <li>Declare its value but no type. The variable type will be set to the data type of the assigned value.</li>
+          <code><span class="keyword">var</span> <span class="identifier">[identifier]</span> = value;</code>
+          <li>Declare neither value not type. In this case, the data type of the variable will be any and will be
+            initialized to undefined.</li>
+          <code><span class="keyword">var</span> <span class="identifier">[identifier]</span>;</code>
+        </ul>
+
+        <p><strong>Examples:</strong></p>
+        <code>
+          <span class="keyword">var</span> <span class="identifier">name</span>: <span class="class-name">String</span> = <span class="string-value">'John'</span>;<br>
+          <span class="keyword">var</span> <span class="identifier">name</span>: <span class="class-name">String</span>;<br>
+          <span class="keyword">var</span> <span class="identifier">name</span> = <span class="string-value">'John'</span>;<br>
+          <span class="keyword">var</span> <span class="identifier">name</span>;
+        </code>
+      </article>
+    </section>
+    <section id="Functions" class="main-section">
+      <header>
+        <h2>Functions</h2>
+      </header>
+      <article>
+        <p>Functions are the building blocks of readable, maintainable, and reusable code. A function is a set of
+          statements to perform a specific task. Functions organize the program into logical blocks of code. Once
+          defined, functions may be called to access code. This makes the code reusable. Moreover, functions make it
+          easy to read and maintain the program’s code.</p>
+
+        <p>A function declaration tells the compiler about a function's name, return type, and parameters. A function
+          definition provides the actual body of the function.</p>
+
+        <h3>Syntax</h3>
+        <code>
+          <span class="keyword">function</span> <span class="identifier">function_name</span>() {
+          <pre class="code-comment">  // function body</pre>
+          }
+        </code>
+        <p><strong>Example:</strong></p>
+        <code>
+          <span class="keyword">function</span> <span class="identifier">exampleFunction</span>() {
+          <pre class="code-comment">  // function body</pre>
+          <pre>  console.log(<span class="string-value">'function called'</span>);</pre>
+          }<br><br>
+          <pre class="code-comment">// call the function</pre>
+          <pre>exampleFunction();</pre>
+        </code>
+      </article>
+    </section>
+    <section id="Reference" class="main-section">
+      <header>
+        <h2>Reference</h2>
+      </header>
+      <p>All the documentation was taken from <a href="https://www.tutorialspoint.com/typescript/index.htm">Tutorials point's TypeScript Tutorial</a>.</p>
     </section>
   </main>
 

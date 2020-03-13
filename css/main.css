@@ -1,4 +1,4 @@
-html, body, h1, h2, h3, h4, h5, h6 {
+html, body, h1, h2, h3, h4, h5, h6, pre {
   margin: 0;
 }
 
@@ -26,11 +26,11 @@ html {
 }
 
 .nav-link {
-  font-size: 1.1em;
-  color: black;
   display: block;
-  border-top: 1px solid gray;
+  color: black;
+  font-size: 1.1em;
   text-decoration: none;
+  border-top: 1px solid gray;
 }
 
 .nav-link:hover {
@@ -61,6 +61,39 @@ code {
   color: white;
   background-color: rgb(36, 36, 36);
   border-radius: 5px;
+}
+
+table, th, td {
+  border: 1px solid rgb(100, 100, 100);
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 5px 10px;
+}
+
+th {
+  background-color: rgb(176, 226, 238);
+}
+
+.keyword {
+  color: rgb(86, 156, 214);
+}
+
+.identifier {
+  color: rgb(156, 220, 240);
+}
+
+.class-name {
+  color: rgb(78, 201, 176);
+}
+
+.string-value {
+  color: rgb(206, 145, 120);
+}
+
+.code-comment {
+  color: rgb(106, 153, 85);
 }
 
 @media(max-width: 900px) {
