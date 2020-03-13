@@ -1,0 +1,17 @@
+{
+  "name": "technicaldocumentationpage",
+  "version": "1.0.0",
+  "description": "A technical documentation webpage for one of freeCodeCamp's Responsive Web Design certification challenges.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnixFang/technicaldocumentationpage.git"
+  },
+  "author": "OnixFang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OnixFang/technicaldocumentationpage/issues"
+  },
+  "homepage": "https://github.com/OnixFang/technicaldocumentationpage#readme"
+}
