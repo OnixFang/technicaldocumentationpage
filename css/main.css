@@ -10,7 +10,7 @@ html {
 }
 
 #navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 350px;
@@ -53,6 +53,14 @@ html {
 
 h2 {
   font-weight: normal;
+}
+
+code {
+  display: block;
+  padding: 10px;
+  color: white;
+  background-color: rgb(36, 36, 36);
+  border-radius: 5px;
 }
 
 @media(max-width: 900px) {
